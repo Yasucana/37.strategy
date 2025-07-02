@@ -39,8 +39,15 @@
     <button onclick="gather('gold')">Gather Gold</button><br><br>
     <button onclick="build('barracks')">Build Barracks (10 Wood)</button>
     <button onclick="build('mine')">Build Mine (10 Stone)</button>
-    <button onclick="build('goldmine')">Build Goldmine (10 Gold)</button><br><br>
+    <button onclick="build('goldmine')">Build Goldmine (10 Gold)</button>
+    <button onclick="build('barricade')">Build Barricade (10 Stone)</button><br><br>
     <button onclick="spawnUnit()">Train Soldier (5 Gold)</button><br><br>
+    <p>
+      Barracks Lvl: <span id="barracksLvl">0</span><br>
+      Mine Lvl: <span id="mineLvl">0</span> (<span id="woodRate">0</span>/s)<br>
+      Goldmine Lvl: <span id="goldmineLvl">0</span> (<span id="goldRate">0</span>/s)<br>
+      Barricade: <span id="barricadeBuilt">No</span>
+    </p>
     ❤️ Your Base HP: <span id="playerHp">100</span><br>
     💀 Enemy HP: <span id="enemyHp">100</span>
   </div>
