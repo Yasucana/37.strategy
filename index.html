@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Strategy Game</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    canvas { background: #f4f4f4; display: block; margin: auto; }
+    #ui {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255,255,255,0.9);
+      padding: 10px;
+      border: 1px solid #aaa;
+      font-size: 14px;
+    }
+    button { margin: 2px; }
+    #tutorial {
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      padding: 20px;
+      border: 2px solid #444;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div id="ui">
+    <p><strong>Resources:</strong></p>
+    🪵 Wood: <span id="wood">0</span><br>
+    🪨 Stone: <span id="stone">0</span><br>
+    💰 Gold: <span id="gold">0</span><br><br>
+    <button onclick="gather('wood')">Gather Wood</button>
+    <button onclick="gather('stone')">Gather Stone</button>
+    <button onclick="gather('gold')">Gather Gold</button><br><br>
+    <button onclick="build('barracks')">Build Barracks (10 Wood)</button>
+    <button onclick="build('mine')">Build Mine (10 Stone)</button>
+    <button onclick="build('goldmine')">Build Goldmine (10 Gold)</button><br><br>
+    <button onclick="spawnUnit()">Train Soldier (5 Gold)</button><br><br>
+    ❤️ Your Base HP: <span id="playerHp">100</span><br>
+    💀 Enemy HP: <span id="enemyHp">100</span>
+  </div>
+
+  <div id="tutorial">
+    <h3>🎯 Objective</h3>
+    <p>Collect resources, build structures, and train soldiers to destroy the enemy base.</p>
+    <ul>
+      <li><b>Gather</b> Wood / Stone / Gold using buttons.</li>
+      <li><b>Build</b> Barracks (train units), Mine, Goldmine.</li>
+      <li><b>Train Soldiers</b> and they will auto-attack.</li>
+    </ul>
+    <p><i>Destroy the red enemy base to win!</i></p>
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <canvas id="gameCanvas" width="900" height="400"></canvas>
+  <script src="game.js"></script>
+</body>
+</html>
